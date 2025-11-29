@@ -3,17 +3,17 @@ import '../css/ProductCard.css'
 function ProductCard() {
     
     return(
-        <div className="product-card">
-            <div className="product-image">
-                  <img src={movie.url} alt={movie.title} />
+        <div className="card">
+            <div className="card-img-top">
+                  <img src={product.src} alt={product.nombre}/>
             </div>
-
-        <div className="movie-info">
-            <h3>{movie.title}</h3>
-            <p>{movie.release_date}</p>
+            <div className="card-body">
+                <h2 className="card-title">{product.nombre}</h2>
+                <p>{product.emprendedor}</p>
+                <span class="price"><p>{product.precio}</p></span>
+            </div>
         </div>
-    </div>
     );
 }
 
-export default MovieCard;
+export default ProductCard;

@@ -4,76 +4,50 @@ import '../css/Home.css'
 
 
 function Home() {
-  const [searchQuery, setSearchQuery] = useState("");
 
-  const [movies, setMovies] = useState([]);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const products = [
+    {nombre: "Licor De Manzana", emprendedor: "Del Huerto de Santiago", src: "../resources/images/LicorDelHuerto.png", precio: "$90.00"},
+    {nombre: "Miel De Abeja Cruda", emprendedor: "Abellamia", src: "../resources/images/MielAbellamia.png", precio: "$100.00"},
+    {nombre: "Salsa Cambray", emprendedor: "Los Cavazos", src: "../resources/images/CambrayCavazos.png", precio: "$130.00"},
+    {nombre: "Salsa Doña Macha", emprendedor: "Chilito Pikín", src: "../resources/images/DonaMacha.png", precio: "$150.00"},
+    {nombre: "Salsa La Compita", emprendedor: "Chilito Pikín", src: "../resources/images/LaCompita.png", precio: "$35.00"},
+    {nombre: "Rollo De Guayaba", emprendedor: "Dulces Finos Victoria", src: "../resources/images/DulceGuayaba.png.png", precio: "$70.00"},
+    {nombre: "Miel Como Hecho En Casa", emprendedor: "La Monita", src: "../resources/images/MielMonita.png", precio: "$100.00"},
+    {nombre: "Chimichurri", emprendedor: "Somos Sabores", src: "../resources/images/ChimichurriSomosSabores.png", precio: "$50.00"}
+  ];
 
-  useEffect(()=> {
-    const loadPopularMovies = async () => {
-      try{
-        const popularMovies = await getPopularMovies();
-        setMovies(popularMovies);
-      } catch (err) {
-        console.log(err);
-        setError("Failed");
-      }
-      finally {
-        setLoading(false);
-      }
-    }
-    loadPopularMovies();
-  },[])
-
-  /*const movies=[
-    {id: 1, title: "John Wick", release_date:"2020"},
-     {id: 2, title: "Terminator", release_date:"1989"},
-      {id: 3, title: "The Matrix", release_date:"1998"},
-  ]*/
-  const handleSearch = async (e) => {
-    e.preventDefault();
-    if(!searchQuery.trim()) return;
-    if(loading) return;
-    setLoading(true);
-    try {
-      const searchResults = await searchMovies(searchQuery);
-      setMovies(searchResults);
-      setError(null);
-    }
-    catch (err) {
-      console.log(err);
-      setError("Fallo llamada search.")
-    }
-    finally {
-      setLoading(false);
-    }
-  };
-
-  const filteredMovies = useMemo(() => {
-    const q = searchQuery.trim().toLowerCase();
-    if(!q) return movies;
-    return movies.filter(m => m.title.toLowerCase().includes(q));
-  }, [searchQuery, movies]);
+  const smallcards = [
+    {nombre: "Chilito Pikín", src: "../resources/images/ChilitoPikinLogo.png"},
+    {nombre: "Diadié", src: "../resources/images/DiadieLogo.png"},
+    {nombre: "Abellamia", src: "../resources/images/mielAbellaMiaLogo.png"},
+    {nombre: "Del Huerto de Santiago", src: "../resources/images/HuertodeSantiagoLogo.png"},
+    {nombre: "Somos Sabores", src: "../resources/images/SomosSaboresLogo.png"},
+    {nombre: "Los Cavazos", src: "../resources/images/LosCavazosLogo.png"},
+    {nombre: "Dulces Finos Victoria", src: "../resources/images/DulcesFinosLogo.png"},
+    {nombre: "Olartesanal", src: "../resources/images/Olartesanal.png"},
+    {nombre: "La Monita", src: "../resources/images/LaMonitaLogo.png"},
+    {nombre: "MASEDI", src: "../resources/images/MASEDILogo.png"},
+    {nombre: "Linaje de Perros", src: "../resources/images/LinajePerrosLogo.png"},
+    {nombre: "Manos Nativas", src: "../resources/images/ManosNativasLogo.png"},
+    {nombre: "Grill Kong", src: "../resources/images/GrillKongLogo.png"},
+    {nombre: "Pikabite Pro", src: "../resources/images/PikabiteProLogo.png"},
+    {nombre: "Sabun SENDIC", src: "../resources/images/SabunSendicLogo.png"}
+  ];
 
   return (
-    
       <>
-      <div className="home">
-      <form onSubmit={handleSearch} className="search-form">
-          <input type="search" placeholder="Buscar pelicula..." className="search-input" 
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <button type="submit" className="search-button">Search</button>
-      </form>
-
-        <div className="movies-grid">
-            {filteredMovies.map((movie) =>(
-                <MovieCard movie={movie} key={movie.id} />
-            ))}
-        </div>
-      </div>
+        <section className="productos-destacados">
+            <h1>Nuestros productos destacados</h1>
+            <div className="productos-scroll">
+                <ProductCard></ProductCard>
+            </div>
+        </section>
+        <section className="productos-destacados">
+            <h1>Nuestros productos destacados</h1>
+            <div className="productos-scroll">
+                <SmallCard></SmallCard>
+            </div>
+        </section>
       </>
   );
 }
