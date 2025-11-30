@@ -39,13 +39,17 @@ function Home() {
         <section className="productos-destacados">
             <h1>Nuestros productos destacados</h1>
             <div className="productos-scroll">
-                <ProductCard></ProductCard>
+                {products.map((productData, index) => (
+                    <ProductCard key={index} product={productData}/>
+                ))}
             </div>
         </section>
-        <section className="productos-destacados">
-            <h1>Nuestros productos destacados</h1>
-            <div className="productos-scroll">
-                <SmallCard></SmallCard>
+        <section className="seccion-emprendedores">
+            <h1>Nuestros emprendedores</h1>
+            <div className="galery-display">
+                {smallcards.map((smallcardData, index) => (
+                    <SmallCard key={index} smallcard={productData}/>
+                ))}
             </div>
         </section>
       </>

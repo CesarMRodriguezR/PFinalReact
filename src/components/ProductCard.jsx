@@ -1,6 +1,6 @@
 import '../css/ProductCard.css'
 
-function ProductCard() {
+function ProductCard({product}) {
     
     return(
         <div className="card">
