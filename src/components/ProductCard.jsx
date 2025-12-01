@@ -16,4 +16,4 @@ function ProductCard({product}) {
     );
 }
 
-export default ProductCard;
+export default ProductCard

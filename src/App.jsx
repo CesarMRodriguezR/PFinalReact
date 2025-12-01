@@ -2,7 +2,6 @@ import {Routes, Route} from "react-router-dom"
 import Home from "./pages/Home"
 import Alimentos from "./pages/Alimentos"
 import NavBar from "./components/NavBar"
-import './App.css'
 
 function App() {
 

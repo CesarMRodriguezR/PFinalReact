@@ -6,32 +6,32 @@ import '../css/Home.css'
 function Home() {
 
   const products = [
-    {nombre: "Licor De Manzana", emprendedor: "Del Huerto de Santiago", src: "../resources/images/LicorDelHuerto.png", precio: "$90.00"},
-    {nombre: "Miel De Abeja Cruda", emprendedor: "Abellamia", src: "../resources/images/MielAbellamia.png", precio: "$100.00"},
-    {nombre: "Salsa Cambray", emprendedor: "Los Cavazos", src: "../resources/images/CambrayCavazos.png", precio: "$130.00"},
-    {nombre: "Salsa Doña Macha", emprendedor: "Chilito Pikín", src: "../resources/images/DonaMacha.png", precio: "$150.00"},
-    {nombre: "Salsa La Compita", emprendedor: "Chilito Pikín", src: "../resources/images/LaCompita.png", precio: "$35.00"},
-    {nombre: "Rollo De Guayaba", emprendedor: "Dulces Finos Victoria", src: "../resources/images/DulceGuayaba.png.png", precio: "$70.00"},
-    {nombre: "Miel Como Hecho En Casa", emprendedor: "La Monita", src: "../resources/images/MielMonita.png", precio: "$100.00"},
-    {nombre: "Chimichurri", emprendedor: "Somos Sabores", src: "../resources/images/ChimichurriSomosSabores.png", precio: "$50.00"}
+    {nombre: "Licor De Manzana", emprendedor: "Del Huerto de Santiago", src: "./images/LicorDelHuerto.png", precio: "$90.00"},
+    {nombre: "Miel De Abeja Cruda", emprendedor: "Abellamia", src: "./images/MielAbellamia.png", precio: "$100.00"},
+    {nombre: "Salsa Cambray", emprendedor: "Los Cavazos", src: "./images/CambrayCavazos.png", precio: "$130.00"},
+    {nombre: "Salsa Doña Macha", emprendedor: "Chilito Pikín", src: "./images/DonaMacha.png", precio: "$150.00"},
+    {nombre: "Salsa La Compita", emprendedor: "Chilito Pikín", src: "./images/LaCompita.png", precio: "$35.00"},
+    {nombre: "Rollo De Guayaba", emprendedor: "Dulces Finos Victoria", src: "./images/DulceGuayaba.png", precio: "$70.00"},
+    {nombre: "Miel Como Hecho En Casa", emprendedor: "La Monita", src: "./images/MielMonita.png", precio: "$100.00"},
+    {nombre: "Chimichurri", emprendedor: "Somos Sabores", src: "./images/ChimichurriSomosSabores.png", precio: "$50.00"}
   ];
 
   const smallcards = [
-    {nombre: "Chilito Pikín", src: "../resources/images/ChilitoPikinLogo.png"},
-    {nombre: "Diadié", src: "../resources/images/DiadieLogo.png"},
-    {nombre: "Abellamia", src: "../resources/images/mielAbellaMiaLogo.png"},
-    {nombre: "Del Huerto de Santiago", src: "../resources/images/HuertodeSantiagoLogo.png"},
-    {nombre: "Somos Sabores", src: "../resources/images/SomosSaboresLogo.png"},
-    {nombre: "Los Cavazos", src: "../resources/images/LosCavazosLogo.png"},
-    {nombre: "Dulces Finos Victoria", src: "../resources/images/DulcesFinosLogo.png"},
-    {nombre: "Olartesanal", src: "../resources/images/Olartesanal.png"},
-    {nombre: "La Monita", src: "../resources/images/LaMonitaLogo.png"},
-    {nombre: "MASEDI", src: "../resources/images/MASEDILogo.png"},
-    {nombre: "Linaje de Perros", src: "../resources/images/LinajePerrosLogo.png"},
-    {nombre: "Manos Nativas", src: "../resources/images/ManosNativasLogo.png"},
-    {nombre: "Grill Kong", src: "../resources/images/GrillKongLogo.png"},
-    {nombre: "Pikabite Pro", src: "../resources/images/PikabiteProLogo.png"},
-    {nombre: "Sabun SENDIC", src: "../resources/images/SabunSendicLogo.png"}
+    {nombre: "Chilito Pikín", src: "./images/ChilitoPikinLogo.png"},
+    {nombre: "Diadié", src: "./images/DiadieLogo.png"},
+    {nombre: "Abellamia", src: "./images/mielAbellaMiaLogo.png"},
+    {nombre: "Del Huerto de Santiago", src: "./images/HuertodeSantiagoLogo.png"},
+    {nombre: "Somos Sabores", src: "./images/SomosSaboresLogo.png"},
+    {nombre: "Los Cavazos", src: "./images/LosCavazosLogo.png"},
+    {nombre: "Dulces Finos Victoria", src: "./images/DulcesFinosLogo.png"},
+    {nombre: "Olartesanal", src: "./images/Olartesanal.png"},
+    {nombre: "La Monita", src: "./images/LaMonitaLogo.png"},
+    {nombre: "MASEDI", src: "./images/MASEDILogo.png"},
+    {nombre: "Linaje de Perros", src: "./images/LinajePerrosLogo.png"},
+    {nombre: "Manos Nativas", src: "./images/ManosNativasLogo.png"},
+    {nombre: "Grill Kong", src: "./images/GrillKongLogo.png"},
+    {nombre: "Pikabite Pro", src: "./images/PikabiteProLogo.png"},
+    {nombre: "Sabun SENDIC", src: "./images/SabunSendicLogo.png"}
   ];
 
   return (
@@ -48,7 +48,7 @@ function Home() {
             <h1>Nuestros emprendedores</h1>
             <div className="galery-display">
                 {smallcards.map((smallcardData, index) => (
-                    <SmallCard key={index} smallcard={productData}/>
+                    <SmallCard key={index} smallcard={smallcardData}/>
                 ))}
             </div>
         </section>
