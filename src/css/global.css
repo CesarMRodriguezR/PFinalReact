@@ -73,7 +73,7 @@ nav ul{
 }
 
 /* Hace que los elementos eliminen los * y el subrayado*/
-nav ul li a {
+.nav-item a {
   color: #fff;
   text-decoration: none;
 }
@@ -86,18 +86,8 @@ h1 {
   margin-bottom: 0.2rem;
 }
 
-.card-title {
-  font-weight: bold;
-  margin-bottom: 0;
-  font-size: clamp(1rem, 1vw + 0.5rem, 1.25rem);
-}
-
 p {
   font-size: clamp(0.9rem, 0.8vw + 0.5rem, 1.1rem);
-}
-
-.price {
-  font-weight: 600;
 }
 
 /* Botones de búsqueda e icono */
@@ -124,6 +114,8 @@ p {
   height: 30px;
   filter: brightness(0) invert(1);
 }
+
+
 
 /* Panel deslizable del encabezado móvil */
 .hidden-container-mobile {
@@ -178,7 +170,7 @@ input[type="search"]:focus {
   cursor: pointer;
   width: 40px;
   height: 40px;
-  mask: url(../resources/icons/basil--menu-outline.svg) no-repeat center / contain ;
+  mask: url(/icons/basil--menu-outline.svg) no-repeat center / contain ;
   background-color: white;
 }
 
@@ -213,47 +205,6 @@ input[type="search"]:focus {
 /*Efecto sutil para iconos de redes al pasar el mouse*/
 .social-icon:hover {
   transform: scale(1.1);
-}
-
-/* Son las tarjetas que muestran productos, emprendedores o subcategorias.*/
-.card {
-  margin: 1rem;
-  padding: 1rem;
-  border: 1px solid gray;
-  border-radius: 0.5rem;
-  display: flex; /*Para poder centrar los elementos de adentro */
-  min-height: 20rem; /*Hace que al menos todas las tarjetas tengan la misma altura*/
-  flex: 1 0 30dvw; /* Declara el tamaño minimo es 30% de la pantalla, ademas que puede crecer si es necesario */
-  flex: 1 0 30dvw;
-  flex-direction: column;
-  justify-content: space-around;
-  text-align: center;
-  align-items: center;
-  color: inherit ; /* Elimina que los links tengan color azul*/
-  text-decoration: none; /* Elimina que los links tengan un subrayado*/
-  box-shadow: 0 4px 8px 0 lightgray;
-  overflow: hidden;
-  transition: transform 0.5s, box-shadow;
-}
-
-/*Interactividad para las tarjetas, salvo aquellas con la clase .no-action*/
-.card:not(.no-action):active {
-  border-color: #F68628;
-  border-width: 2px;
-}
-
-.card:not(.no-action):hover{
-  box-shadow: 0 4px 8px 0 black;
-  transform: scale(1.1, 1.1);
-}
-
-/* Son las imagenes que estan en las tarjetas*/
-.card-img-top {
-  margin: 0 auto 1rem auto;
-  max-width: 100%;  /* Tamaño dependiendo de la pantalla*/
-  max-height: 8rem;
-  object-fit: contain;
-  background-color: #fff;
 }
 
 /*Display en forma de galeria para las tarjetas*/
@@ -344,25 +295,10 @@ input[type="search"]:focus {
     justify-content: space-evenly;
   }
 
-  .card {
-    flex: 1 0 15vw; /* Cambia que el tamaño minimo ahora sea de 15% del tamaño de pantalla*/
-    min-height: 24rem;
-    justify-content: space-around;
-    align-items: center;
-    }
-
   .productos{
     margin: auto 2rem auto auto;
   }
-
-  .card-img-top {
-    max-width: 100%;  /* Tamaño dependiendo de la pantalla*/
-    max-height: 12rem;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto 1rem auto;
-    background-color: #fff;
-  }
+  
     /* Se encarga de cambiar las tarjetas que usan sidescroll en movil sean ahora wrap para Desktop*/
   .productos-scroll {
     overflow: visible; /* Elimina la scrollbar*/

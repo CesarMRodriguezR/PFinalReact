@@ -1,0 +1,64 @@
+.small-card {
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  display: flex; /*Para poder centrar los elementos de adentro */
+  min-height: 7rem; /*Hace que al menos todas las tarjetas tengan la misma altura*/
+  flex: 1 0 30dvw; /* Declara el tamaño minimo es 30% de la pantalla, ademas que puede crecer si es necesario */
+  flex: 1 0 30dvw;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  color: inherit ; /* Elimina que los links tengan color azul*/
+  text-decoration: none; /* Elimina que los links tengan un subrayado*/
+  box-shadow: 0 4px 8px 0 lightgray;
+  overflow: hidden;
+  transition: transform 0.5s, box-shadow;
+}
+
+.small-card-title {
+  font-weight: bold;
+  margin-bottom: 0;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.25rem);
+}
+
+/* Son las imagenes que estan en las tarjetas*/
+.small-card-img-top img {
+  margin: 0 auto 1rem auto;
+  max-width: 100%;  /* Tamaño dependiendo de la pantalla*/
+  max-height: 8rem;
+  object-fit: contain;
+  background-color: #fff;
+}
+
+/*Interactividad para las tarjetas, salvo aquellas con la clase .no-action*/
+.small-card:not(.no-action):active {
+  border-color: #F68628;
+  border-width: 2px;
+}
+
+.small-card:not(.no-action):hover{
+  box-shadow: 0 4px 8px 0 black;
+  transform: scale(1.05, 1.05);
+}
+
+/*Para todo menos movil*/
+@media (min-width: 768px) {
+    .small-card {
+    flex: 1 0 15vw; /* Cambia que el tamaño minimo ahora sea de 15% del tamaño de pantalla*/
+    justify-content: space-around;
+    align-items: center;
+    min-height: 16rem; /*Hace que al menos todas las tarjetas tengan la misma altura*/
+    }
+
+    .small-card-img-top img {
+        max-width: 100%;  /* Tamaño dependiendo de la pantalla*/
+        max-height: 12rem;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto 1rem auto;
+        background-color: #fff;
+    }
+}
