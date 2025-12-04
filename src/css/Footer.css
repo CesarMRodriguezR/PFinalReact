@@ -1,0 +1,53 @@
+footer {
+  text-align: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  margin: 0;
+}
+
+footer img {
+  display: block;
+}
+/*Mensaje de copyright en el footer*/
+.copyright {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+}
+/* Contenedor de íconos */
+.social-icons {
+  display: flex;
+  justify-content: center;  /* centra horizontalmente */
+  align-items: center;      /* alinea verticalmente */
+  gap: 1.5rem;              /* espacio entre íconos */
+  flex-wrap: wrap;          /* permite que bajen si el ancho no cabe */
+}
+
+/* Iconos de redes sociales individuales */
+.social-icon {
+  height: 30px;             /* todos con altura igual */
+  width: auto;              /* mantiene proporción */
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  color: white;
+}   
+
+/*Estilizacion para telegram y tiktok por diferencias de tamaño.*/
+.telegram-icon, .tiktok-icon {
+  height: 35px;
+}
+
+/*Estilizacion para instagram por diferencias de tamaño.*/
+.instagram-icon {
+    height: 37px;
+}
+
+/*Efecto sutil para iconos de redes al pasar el mouse*/
+.social-icon:hover {
+  transform: scale(1.1);
+}
+@media (min-width: 768px) {
+  footer {
+    padding: 3vh;
+  }
+}

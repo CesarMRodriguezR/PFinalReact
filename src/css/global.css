@@ -14,18 +14,6 @@ header, .navbar, footer {
   color: #fff;
 }
 
-/* Acomoda el header al inicio de la pagina */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1040;      /* por encima del contenido */
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
 main {
   margin: 7rem 2rem;
   max-width: 95dvw;
@@ -34,48 +22,6 @@ main {
 
 section {
   margin-bottom: 2rem;
-}
-
-footer {
-  text-align: center;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  margin: 0;
-}
-
-footer img {
-  display: block;
-}
-
-/*Mensaje de copyright en el footer*/
-.copyright {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin-bottom: 0;
-}
-
-/* Logo Nuevo Leon*/
-.navbar-brand img {
-  width: 120px;
-  height: auto;
-  padding-top: 10px;
-}
-
-/* Son las opciones del menu de categoria */
-nav ul{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Hace que los elementos eliminen los * y el subrayado*/
-.nav-item a {
-  color: #fff;
-  text-decoration: none;
 }
 
 /*Estilización para tamaños de texto escalables y tipografías*/
@@ -89,124 +35,6 @@ h1 {
 p {
   font-size: clamp(0.9rem, 0.8vw + 0.5rem, 1.1rem);
 }
-
-/* Botones de búsqueda e icono */
-.search-btn,
-.search-icon-mobile {
-  background: none;
-  padding: 0px 10px 0px 10px;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-/* Se encarga que la barra busqueda se estire en Movil y Dektop*/
-.search-bar {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Icono de busqueda (mobile visible) */
-.search-icon {
-  width: 30px;
-  height: 30px;
-  filter: brightness(0) invert(1);
-}
-
-
-
-/* Panel deslizable del encabezado móvil */
-.hidden-container-mobile {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  padding: 10px;
-  box-shadow: 0  4px  rgba(0, 0, 0, 0.1);
-  background-color: #F68628;
-}
-
-/* Estado que muestra cuando en movil se muestra ya sea categoria o barra de busqueda*/
-.show {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/*Interactividad para categorias de busqueda en header*/
-.nav-item:hover {
-  border-bottom: solid white 2px;
-}
-
-.nav-item:active {
-  border-bottom: solid white 2px;
-}
-
-/* Input dentro del buscador móvil */
-.hidden-container-mobile input {
-  border-radius: 0.5rem;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-  outline: none;
-}
-
-/* Formulario de búsqueda general */
-form[role="search"] .form-control {
-  border-radius: 0.5rem;
-}
-/* Hace que cuando selecciones la barra se ponga azul*/
-input[type="search"]:focus {
-  border-color: #0077ff;
-}
-
-/* Ícono del menú (mobile por defecto) */
-.custom-toggler .navbar-toggler-icon {
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  mask: url(/icons/basil--menu-outline.svg) no-repeat center / contain ;
-  background-color: white;
-}
-
-/* Contenedor de íconos */
-.social-icons {
-  display: flex;
-  justify-content: center;  /* centra horizontalmente */
-  align-items: center;      /* alinea verticalmente */
-  gap: 1.5rem;              /* espacio entre íconos */
-  flex-wrap: wrap;          /* permite que bajen si el ancho no cabe */
-}
-
-/* Iconos de redes sociales individuales */
-.social-icon {
-  height: 30px;             /* todos con altura igual */
-  width: auto;              /* mantiene proporción */
-  transition: transform 0.2s ease;
-  cursor: pointer;
-  color: white;
-}   
-
-/*Estilizacion para telegram y tiktok por diferencias de tamaño.*/
-.telegram-icon, .tiktok-icon {
-  height: 35px;
-}
-
-/*Estilizacion para instagram por diferencias de tamaño.*/
-.instagram-icon {
-    height: 37px;
-}
-
-/*Efecto sutil para iconos de redes al pasar el mouse*/
-.social-icon:hover {
-  transform: scale(1.1);
-}
-
 /*Display en forma de galeria para las tarjetas*/
 .galery-display{
     display: flex;
@@ -227,72 +55,9 @@ input[type="search"]:focus {
 
 /*Estilos para todo excepto movil*/
 @media (min-width: 768px) {
-  footer {
-    padding: 3vh;
-  }
-  
   main {
       margin: 9rem 3rem;
       font-size: 16px;
-  }
-
-/* Esconde botones exclusivos para movil*/
-  .custom-toggler, .search-icon-mobile {
-    display: none;
-  }
-
-/* Muestra las secciones escondidas de movil para Desktop*/
-  .hidden-container-mobile{
-    all: revert ; /* Sobreescribe y resetea las caracteristicas */
-    display: block; /* Muestra la barra de busqueda y categorias */
-  }
-
-/* Hace que el header sea un grid para reacomodar los elementos*/
-  .navbar {
-    padding: 0px 3.5rem;
-    display: grid;
-    grid-template-columns: 187px 0.9fr 0.5fr; /* 187 es el minimo del logo */
-    align-items: center;
-  }
-
-  /* Hace que el logo sea primero */
-  .navbar-brand {
-    padding: 10px;
-    grid-column-start: 1;
-    grid-row-start: 1;
-  }
-  
-  /* Agranda el logo*/
-  .navbar-brand img {
-    width: 140px;
-  }
-
-  /* Coloca la barra de busqueda despues del logo*/
-  #searchContainer {
-    padding: 0px 0.3vw;
-    grid-column-start: 2;
-    grid-row-start: 1; /* Hace que las opciones este centradas en la primera*/
-    display: flex;
-  }
-
-  /* Hace que la barra de busqueda pueda extenderse al tamaño de la pantalla */
-  input {
-    flex:1 ;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-  }
-
-  /* Hace que las categorias sean al final*/
-  #categoryContainer {
-    grid-column-start: 3;
-    grid-row-start: 1;  /* Hace que las opciones este centradas en la primera*/
-  }
-
-  /* Hace que las categorias sean ahora horizontales y mas grandes*/
-  nav ul {
-    font-size: 18px;
-    flex-direction: row;
-    justify-content: space-evenly;
   }
 
   .productos{

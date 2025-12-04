@@ -1,0 +1,166 @@
+/* Acomoda el header al inicio de la pagina */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1040;      /* por encima del contenido */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/* Logo Nuevo Leon*/
+.navbar-brand img {
+  width: 120px;
+  height: auto;
+  padding-top: 10px;
+}
+/* Son las opciones del menu de categoria */
+nav ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* Hace que los elementos eliminen los * y el subrayado*/
+.nav-item a {
+  color: #fff;
+  text-decoration: none;
+}
+/*Interactividad para categorias de busqueda en header*/
+.nav-item:hover {
+  border-bottom: solid white 2px;
+}
+
+.nav-item:active {
+  border-bottom: solid white 2px;
+}
+/* Botones de búsqueda e icono */
+.search-btn,
+.search-icon-mobile {
+  background: none;
+  padding: 0px 10px 0px 10px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+/* Se encarga que la barra busqueda se estire en Movil y Dektop*/
+.search-bar {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+/* Icono de busqueda (mobile visible) */
+.search-icon {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+}
+/* Panel deslizable del encabezado móvil */
+.hidden-container-mobile {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0  4px  rgba(0, 0, 0, 0.1);
+  background-color: #F68628;
+}
+/* Estado que muestra cuando en movil se muestra ya sea categoria o barra de busqueda*/
+.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Input dentro del buscador móvil */
+.hidden-container-mobile input {
+  border-radius: 0.5rem;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+/* Formulario de búsqueda general */
+form[role="search"] .form-control {
+  border-radius: 0.5rem;
+}
+/* Hace que cuando selecciones la barra se ponga azul*/
+input[type="search"]:focus {
+  border-color: #0077ff;
+}
+
+/* Ícono del menú (mobile por defecto) */
+.custom-toggler .navbar-toggler-icon {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  mask: url(/icons/basil--menu-outline.svg) no-repeat center / contain ;
+  background-color: white;
+}
+
+
+@media (min-width: 768px) {
+/* Esconde botones exclusivos para movil*/
+  .custom-toggler, .search-icon-mobile {
+    display: none;
+  }
+/* Muestra las secciones escondidas de movil para Desktop*/
+  .hidden-container-mobile{
+    all: revert ; /* Sobreescribe y resetea las caracteristicas */
+    display: block; /* Muestra la barra de busqueda y categorias */
+  }
+/* Hace que el header sea un grid para reacomodar los elementos*/
+  .navbar {
+    padding: 0px 3.5rem;
+    display: grid;
+    grid-template-columns: 187px 0.9fr 0.5fr; /* 187 es el minimo del logo */
+    align-items: center;
+  }
+  /* Hace que el logo sea primero */
+  .navbar-brand {
+    padding: 10px;
+    grid-column-start: 1;
+    grid-row-start: 1;
+  }
+  
+  /* Agranda el logo*/
+  .navbar-brand img {
+    width: 140px;
+  }
+
+  /* Coloca la barra de busqueda despues del logo*/
+  #searchContainer {
+    padding: 0px 0.3vw;
+    grid-column-start: 2;
+    grid-row-start: 1; /* Hace que las opciones este centradas en la primera*/
+    display: flex;
+  }
+
+  /* Hace que la barra de busqueda pueda extenderse al tamaño de la pantalla */
+  input {
+    flex:1 ;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+
+  /* Hace que las categorias sean al final*/
+  #categoryContainer {
+    grid-column-start: 3;
+    grid-row-start: 1;  /* Hace que las opciones este centradas en la primera*/
+  }
+
+  /* Hace que las categorias sean ahora horizontales y mas grandes*/
+  nav ul {
+    font-size: 18px;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+   
+}
