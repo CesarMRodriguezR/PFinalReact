@@ -1,20 +1,9 @@
-import ProductCard from "../components/ProductCard";
-import SmallCard from "../components/SmallCard";
+import SmallCard from "../components/SmallCard"
+import Catalogo from "../components/Catalogo"
 import '../css/Home.css'
 
 
 function Home() {
-
-  const products = [
-    {nombre: "Licor De Manzana", emprendedor: "Del Huerto de Santiago", src: "/images/LicorDelHuerto.png", precio: "$90.00"},
-    {nombre: "Miel De Abeja Cruda", emprendedor: "Abellamia", src: "/images/MielAbellamia.png", precio: "$100.00"},
-    {nombre: "Salsa Cambray", emprendedor: "Los Cavazos", src: "/images/CambrayCavazos.png", precio: "$130.00"},
-    {nombre: "Salsa Doña Macha", emprendedor: "Chilito Pikín", src: "/images/DonaMacha.png", precio: "$150.00"},
-    {nombre: "Salsa La Compita", emprendedor: "Chilito Pikín", src: "/images/LaCompita.png", precio: "$35.00"},
-    {nombre: "Rollo De Guayaba", emprendedor: "Dulces Finos Victoria", src: "/images/DulceGuayaba.png", precio: "$70.00"},
-    {nombre: "Miel Como Hecho En Casa", emprendedor: "La Monita", src: "/images/MielMonita.png", precio: "$100.00"},
-    {nombre: "Chimichurri", emprendedor: "Somos Sabores", src: "/images/ChimichurriSomosSabores.png", precio: "$50.00"}
-  ];
 
   const smallcards = [
     {nombre: "Chilito Pikín", src: "/images/ChilitoPikinLogo.png"},
@@ -39,9 +28,7 @@ function Home() {
         <section className="productos-destacados">
             <h1>Nuestros productos destacados</h1>
             <div className="productos-scroll">
-                {products.map((productData, index) => (
-                    <ProductCard key={index} product={productData}/>
-                ))}
+                <Catalogo soloDestacados={true}/>
             </div>
         </section>
         <section className="seccion-emprendedores">
