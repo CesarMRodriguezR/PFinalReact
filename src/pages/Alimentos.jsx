@@ -22,7 +22,7 @@ function Alimentos() {
                 ))}
             </div>
         </section>
-        <section className="productos">
+        <section className="todos-los-productos">
             <h1>Todos los productos</h1>
             <div className="galery-display">
                 <Catalogo/>
