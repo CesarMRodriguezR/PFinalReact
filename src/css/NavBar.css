@@ -8,6 +8,8 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: #F68628;
+  color: #fff;
 }
 /* Logo Nuevo Leon*/
 .navbar-brand img {

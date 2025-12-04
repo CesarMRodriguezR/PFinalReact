@@ -1,6 +1,5 @@
 import SmallCard from "../components/SmallCard"
 import Catalogo from "../components/Catalogo"
-import '../css/Home.css'
 
 
 function Home() {
